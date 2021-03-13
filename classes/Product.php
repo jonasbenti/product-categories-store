@@ -51,7 +51,7 @@ class Product
     {
         if ($conn = Transaction::get())
         {
-            $result = $conn->query("SELECT * FROM product WHERE image IS NOT NULL and image <> '' ORDER BY id DESC LIMIT 6");
+            $result = $conn->query("SELECT * FROM product WHERE image IS NOT NULL and image <> '' ORDER BY id DESC LIMIT 4");
 
             return $result->fetchAll();
         }

@@ -1,5 +1,5 @@
 <?php
-Class ProductUpload
+Class Upload
 {
     public static function validUpload($image)
     {

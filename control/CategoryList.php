@@ -44,7 +44,6 @@ class CategoryList
                 $item = str_replace('{code}', $Category['code'], $item);               
             
                 $items .= $item;
-
             }
             $this->html = str_replace('{items}', $items, $this->html);
 
@@ -62,6 +61,4 @@ class CategoryList
         $this->load();
         echo $this->html;
     }
-
-
 }

@@ -2,7 +2,7 @@
     require_once 'classes/Product.php';
     require_once 'classes/Category.php';
     require_once 'classes/ProductCategories.php';
-    require_once 'classes/ProductUpload.php';
+    require_once 'classes/Upload.php';
 
     class Productform
     {
@@ -81,7 +81,7 @@
             {
                 Transaction::open('loja_webjump');
                 //faz o upload da imagem
-                $name_image = ProductUpload::validUpload($_FILES['image']);
+                $name_image = Upload::validUpload($_FILES['image']);
                 $param['image'] = $name_image;
                 $product_id = Product::save($param);
                 $this->data = $param;
