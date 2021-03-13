@@ -1,5 +1,8 @@
 <?php
-
+//Caminho pasta dos arquivos
+define("PATH_FILE", "assets\images\product");
+//Caminho arquivo index
+define("PATH_INDEX", __DIR__);
 spl_autoload_register( function($class)
 {
     $dir_src = './control/';

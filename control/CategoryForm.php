@@ -1,13 +1,13 @@
 <?php
     require_once 'classes/Category.php';
-    //require_once 'classes/api/Transaction.php';
 
     class Categoryform
     {
     private $html;
     private $data;
 
-    public function __construct() {
+        public function __construct() 
+        {
         $this->html = file_get_contents('assets/form_category.html');
         $this->data = [
         'id' => null,
@@ -44,7 +44,6 @@
                 header("Location: index.php?class=CategoryList");
 
                 Transaction::close();
-
             } 
             catch (Exception $e) {
                 echo $e->getMessage();
@@ -59,7 +58,4 @@
             $this->html  = str_replace('{code}', $this->data['code'], $this->html );
             echo $this->html;
         }
-
-
-
     }

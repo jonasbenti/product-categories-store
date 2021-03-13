@@ -13,21 +13,22 @@ class Connection
         {
             throw new Exception("Arquivo {$name} não encontrado");
         }
-        
+        $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8');
         $user = isset($db['user']) ? $db['user'] : null;
         $pass = isset($db['pass']) ? $db['pass'] : null;
         $name = isset($db['name']) ? $db['name'] : null;
         $host = isset($db['host']) ? $db['host'] : null;
         $type = isset($db['type']) ? $db['type'] : null;
         
-        switch ($type) {
+        switch ($type) 
+        {
             case 'pgsql':
                 $port = isset($db['port']) ? $db['port'] : '5432';
                 $conn = new PDO("pgsql:dbname={$name}; user={$user}; password={$pass}; host={$host}; port={$port}");
                 break;
             case 'mysql':
                 $port = isset($db['port']) ? $db['port'] : '3306';
-                $conn = new PDO("mysql:host={$host};port={$port};dbname={$name}", $user, $pass);
+                $conn = new PDO("mysql:host={$host};port={$port};dbname={$name}", $user, $pass, $options);
                 break;
             case 'sqlite':
                 $conn = new PDO("sqlite:{$name}");

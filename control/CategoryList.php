@@ -1,5 +1,4 @@
 <?php
-//require_once 'classes/api/Transaction.php';
 require_once 'classes/Category.php';
 
 class CategoryList

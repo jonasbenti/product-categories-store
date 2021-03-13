@@ -9,9 +9,8 @@ class Category
         {            
             $result = $conn->prepare("select * from category WHERE id= :id");
             $result->execute([':id' => $id]);
-            return $result->fetch();
             
-        $conn = null;
+            return $result->fetch();
         }
         else
         {

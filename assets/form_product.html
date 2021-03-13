@@ -12,7 +12,7 @@
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script></head>
-  <!-- Header -->
+<!-- Header -->
 <amp-sidebar id="sidebar" class="sample-sidebar" layout="nodisplay" side="left">
   <div class="close-menu">
     <a on="tap:sidebar.toggle">
@@ -30,7 +30,7 @@
 <header>
   <div class="go-menu">
     <a on="tap:sidebar.toggle">☰</a>
-    <a href="assets/dashboard.html" class="link-logo"><img src="assets/images/go-logo.png" alt="Welcome" width="69" height="430" /></a>
+    <a href="index.php?class=Dashboard" class="link-logo"><img src="assets/images/go-logo.png" alt="Welcome" width="69" height="430" /></a>
   </div>
   <div class="right-box">
     <span class="go-title">Painel do Administrador</span>
@@ -45,32 +45,37 @@
       <input name="id" type="hidden" id="id" class="input-text" value="{id}" /> 
       <div class="input-field">
         <label for="code" class="label">SKU</label>
-        <input name="code" type="text" id="code" class="input-text" value="{code}" /> 
+        <input name="code" type="text" id="code" class="input-text" value="{code}" required  /> 
       </div>
       <div class="input-field">
         <label for="name" class="label">Nome</label>
-        <input name="name" type="text" id="name" class="input-text" value="{name}" /> 
+        <input name="name" type="text" id="name" class="input-text" value="{name}" required/> 
       </div>
       <div class="input-field">
         <label for="price" class="label">Preço</label>
-        <input name="price" type="text" id="price" class="input-text" value="{price}"/> 
+        <input name="price" type="text" id="price" class="input-text" value="{price}" required/> 
       </div>
       <div class="input-field">
         <label for="quantity" class="label">Quantidade</label>
-        <input name="quantity" type="text" id="quantity" class="input-text" value="{quantity}"/> 
+        <input name="quantity" type="number" id="quantity" class="input-text" value="{quantity}" required /> 
       </div>
-
       <div class="input-field">
         <label for="categories" class="label">Categorias</label>
         <select multiple name="categories[]" id="categories" class="input-text">
           {categories}
         </select>               
       </div>
-     
+      <div class="input-field">
+        <label for="image" class="label">{image}</label>
+        <input name="image" type="file" id="image" accept="image/*" class="input-text"/> 
+      </div>
+        
+
       <div class="input-field">
         <label for="description" class="label">Descrição</label>
         <textarea name="description" id="description" class="input-text">{description}</textarea>
       </div>
+
       <div class="actions-form">
         <a href="index.php?class=ProductList" class="action back">Voltar</a>
         <input class="btn-submit btn-action" type="submit" value="Salvar" />
